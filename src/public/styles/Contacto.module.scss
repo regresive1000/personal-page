@@ -1,0 +1,90 @@
+section.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.form {
+    background-color: rgba(34, 35, 39, 0.208);
+    
+    padding: 6rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+div.input input {
+    background-color: rgba(42, 48, 61, 0.652);
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgb(42, 48, 61);
+    background: none;
+    border-radius: 0;
+    height: 4rem;
+    
+
+
+    &:active {
+        transition: 1s;
+        background-color: rgba(42, 48, 61, 0.652);
+    }
+
+    &:focus {
+        transition: 1s;
+        background-color: rgba(42, 48, 61, 0.652);
+        
+        border: none;
+    }
+
+    &::placeholder {
+        color: rgb(68, 68, 83);
+    }
+}
+
+.input textarea {
+    background-color: rgba(42, 48, 61, 0.652);
+    border: none;
+    color: white;
+    height: 15rem;
+    border-bottom: 1px solid rgb(42, 48, 61);
+    background: none;
+    border-radius: 0;
+    
+
+    &:focus {
+        transition: 1s;
+        background-color: rgba(42, 48, 61, 0.652);
+        color: white;
+        border: none;
+    }
+    &::placeholder {
+        color: rgb(68, 68, 83);
+    }
+}
+
+form button.button {
+
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.379);
+    box-shadow: none;
+    height: 3rem;
+    transition: 1s;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+    
+
+}
+
+
+
+
+

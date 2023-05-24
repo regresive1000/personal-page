@@ -1,0 +1,47 @@
+@use '../styles/variables.scss' as mixin;
+
+.section {
+  width: 100%;
+  min-height: 92vh;
+  position: relative;
+}
+
+.h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 6rem;
+    text-align: center;
+    color: mixin.$primary-font-color;
+    transition: mixin.$transition-onload;
+    opacity: 1;
+  }
+.emoji {
+  font-size: mixin.$emoji-correct-h1;
+}
+
+
+
+.div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: mixin.$transition-onload;
+    opacity: 0;
+}
+
+
+
+
+.pNombre {
+    font-size: 4rem;
+    color: mixin.$primary-font-color;
+}
+
+.pPresentacion {
+    font-size: 1.5rem;
+    color: mixin.$secondary-font-color;
+}
