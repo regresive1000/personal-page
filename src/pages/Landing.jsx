@@ -137,7 +137,8 @@ const Landing = () => {
         <Tecnologias />
         <Separador title={"Proyectos"} />
         <Proyectos />
-        <SeparadorMail />
+        {/* <SeparadorMail /> */}
+        <Separador title={"Contactame"} />
         <Contacto />
       </main>
     

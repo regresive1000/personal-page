@@ -21,7 +21,7 @@ const HomeLayout = () => {
       ScrollSmoother.create({
         wrapper: '#wrapper',
         content: '#estrella1',
-        smooth: 1.5,
+        smooth: 1.8,
         effects: true
       })
 
