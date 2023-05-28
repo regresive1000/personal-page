@@ -7,8 +7,10 @@ section.section {
 
 .form {
     background-color: rgba(34, 35, 39, 0.208);
-    
+    color: white;
     padding: 6rem;
+    padding-bottom: 2rem;
+    transition: 0.5s;
 }
 
 .input {
@@ -30,14 +32,15 @@ div.input input {
 
 
     &:active {
-        transition: 1s;
+        transition: 0.5s;
         background-color: rgba(42, 48, 61, 0.652);
+        color: white;
     }
 
     &:focus {
-        transition: 1s;
+        transition: 0.5s;
         background-color: rgba(42, 48, 61, 0.652);
-        
+        color: white;
         border: none;
     }
 
@@ -67,7 +70,7 @@ div.input input {
     }
 }
 
-form button.button {
+form input.button {
 
     background-color: transparent;
     color: white;
@@ -84,7 +87,12 @@ form button.button {
 
 }
 
+.p {
+    margin: 0;
+    opacity: 0;
+    transition: 1s;
 
+}
 
 
 

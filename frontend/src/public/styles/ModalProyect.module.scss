@@ -1,0 +1,54 @@
+.modal {
+    color: black;
+}
+
+.modalDialog {
+    max-width: 60%;
+    
+}
+
+.modalContent {
+    border-radius: 0;
+    color: white;
+    background-color: rgba(20, 23, 27, 0.978);
+
+}
+
+img.imagen {
+    height: 500px;
+    object-fit: contain;
+    opacity: 1;
+}
+
+.h4 {
+    font-size: 1.5rem;
+    font-family: Ubuntu;
+    font-weight: 600;
+}
+
+.p {
+    color: rgb(230, 214, 214);
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    
+}
+
+button.cerrar {
+    border: 1px solid white;
+    border-radius: none;
+    background-color: inherit;
+    color: white;
+    padding: 0.5rem 2rem;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+
+}

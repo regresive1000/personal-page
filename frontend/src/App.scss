@@ -45,7 +45,7 @@ body {
   width: 100%;
   background-color: #0D1117;
   color: $primary-font-color;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 
@@ -114,4 +114,22 @@ div.flecha {
   z-index: 2;
   left: 0;
   top: 0;
+}
+
+
+.modal-backdrop {
+  position: absolute;
+}
+.modal-header .button {
+  color: white;
+}
+
+
+.btn-close {
+  --bs-btn-close-color: #fff;
+}
+
+.mensaje-exito {
+  font-size: 1.1rem;
+  width: 100%;
 }
