@@ -12,7 +12,7 @@ app.use(express.json());
 dotenv.config();
 conectarDB();
 
-const dominiosPermitidos = [process.env.FRONTEND_URL];
+const dominiosPermitidos = [process.env.FRONTEND_URL, process.env.FRONTEND_URL2];
 const corsOptions = {
     origin: function(origin, callback) {
         if(dominiosPermitidos.indexOf(origin) !== -1 ) { // Si el origen esta en la lista de dominios permitidos y el -1 quiere decir si no lo encontro
