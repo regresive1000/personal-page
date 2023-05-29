@@ -6,9 +6,9 @@ const path = require('path');
 const app = express();
 
 
-app.use(express.static(path.join(__dirname, './client/dist')));
+app.use(express.static(path.join(__dirname, process.env.ABSOLUTE_STATIC_PATH)));
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, './client/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, process.env.ABSOLUTE_STATIC_PATH, 'index.html'));
 })
 
 
