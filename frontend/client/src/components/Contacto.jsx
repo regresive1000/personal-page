@@ -28,7 +28,7 @@ const Contacto = () => {
         }
 
 
-        const url = 'http://localhost:3222/'
+        const url = import.meta.env.VITE_BACKEND_URL
 
         try {
             await axios.post(url, { post })
