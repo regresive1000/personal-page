@@ -5,10 +5,14 @@ const HelloMain = () => {
 
     useEffect(() => {
         function onLoadHandler(e) {
-            document.querySelector('.h1').style.opacity = 0;
+            document.querySelector('#nombre-inicio-sesion').style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector('.h1').style.opacity = 0;
+            }, 2500)
+            
             setTimeout(() => {
                 document.querySelector('#nombre-inicio-sesion').style.opacity = 1;
-            }, 1500)
+            }, 2500)
         }
         onLoadHandler();
     }, []);

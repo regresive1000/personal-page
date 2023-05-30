@@ -10,7 +10,7 @@ const QuienSoy = () => {
 
             <div className={`${styles.contenedor} col-10 row contenedor d-flex flex-column`}>
                 <div className={`${styles.divP}`}>
-                    <p className={styles.p}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere minima molestias nulla, unde, qui similique quia cupiditate obcaecati reiciendis ut atque voluptatum recusandae deleniti velit quae ex laudantium aliquam illum perferendis. </p>
+                    <p className={styles.p}>Mi habilidad para trabajar tanto en el frontend como en el backend me permite crear soluciones completas y eficientes, ya que conozco el funcionamiento (pros/contras) de ambos lados. Además, tengo una buena capacidad resolutiva de problemas, siempre buscando la eficiencia. Tengo facilidad al relacionarme con un equipo y soy permeable a la aparición de ideas nuevas. Mi objetivo personal es crecer como desarrollador y cada día aprender un poco mas sobre este mundo</p>
                 </div>
 
                 <div className={styles.divImg}>

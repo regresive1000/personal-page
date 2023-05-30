@@ -9,8 +9,8 @@ const Contacto = () => {
     const [asunto, setAsunto] = useState('');
     const [mensaje, setMensaje] = useState('');
     const [post, setPost] = useState({});
+    const [postSend, setPostSend] = useState(null);
 
-    console.log(import.meta.VITE_BACKEND_URL)
 
     useEffect(() => {
         setPost({
@@ -20,13 +20,23 @@ const Contacto = () => {
         })
     }, [email, asunto, mensaje])
 
+    function msjSucces() {
+        const msjExito = document.querySelector('.parrafo');
+        msjExito.style.opacity = 1;
+        setTimeout(() => {
+            msjExito.style.opacity = 0;
+        }, 5000)
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
+        setPostSend(false)
 
         if(email === '' || mensaje === '' || asunto === '') {
             return alert('Todos los campos deben estar completos')
         }
 
+        msjSucces();
 
         const url = import.meta.env.VITE_BACKEND_URL
 
@@ -37,14 +47,13 @@ const Contacto = () => {
             })
         } catch (error) {
             console.log(error)
+            alert('Hubo un error con el servidor, puede comunicarse por este mail: nfvander@gmail.com')
             return
         }
+        msjSucces();
+        setPostSend(true)
         
-        const msjExito = document.querySelector('.parrafo');
-        msjExito.style.opacity = 1;
-        setTimeout(() => {
-            msjExito.style.opacity = 0;
-        }, 5000)
+        
 
     }
     
@@ -71,8 +80,11 @@ const Contacto = () => {
 
             <input type="submit" className={`${styles.button} mt-5`} value={"Enviar Mensaje"} />
 
-
-            <div className=' mensaje-exito text-center  mt-5'><p className={`${styles.p} parrafo`}>Mensaje Enviado Correctamente 👏</p></div>
+           
+            <div className=' mensaje-exito text-center  mt-5'><p className={`${styles.p} parrafo`}>
+                {postSend ? `Mensaje Enviado Correctamente 👏` : <div class="lds-dual-ring"></div>}
+                
+                </p></div>
 
         </form>
 
