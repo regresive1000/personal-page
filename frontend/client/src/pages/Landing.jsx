@@ -27,18 +27,6 @@ const Landing = () => {
     
 
 
-      // NOMBRE
-  
-      let title = document.querySelector('#nombre-inicio-sesion');
-      gsap.fromTo(title, { opacity: 1 }, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: title,
-          start: '-400',
-          end: '-50',
-          scrub: true
-        }
-      })
   
       //SECTIONS
   

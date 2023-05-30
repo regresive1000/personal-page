@@ -8,11 +8,11 @@ const HelloMain = () => {
             document.querySelector('#nombre-inicio-sesion').style.opacity = 0;
             setTimeout(() => {
                 document.querySelector('.h1').style.opacity = 0;
-            }, 2500)
+            }, 500)
             
             setTimeout(() => {
                 document.querySelector('#nombre-inicio-sesion').style.opacity = 1;
-            }, 2500)
+            }, 1500)
         }
         onLoadHandler();
     }, []);
