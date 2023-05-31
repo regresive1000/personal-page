@@ -23,7 +23,7 @@ const ModalProyect = ({bsTarget, imagen, title, descripcion}) => {
                     <h4 className={` ${styles.h4} modal-title fs-3 m-0 mt-2 mb-3 justify-self-start`} id={`${bsTarget}Label`}>{title}</h4>
                     <p className={styles.p}>{descripcion}</p>
                     <div className={styles.botones}>
-                        <button type="button" class={`${styles.cerrar}`} data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" className={`${styles.cerrar}`} data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>

@@ -81,10 +81,15 @@ const Contacto = () => {
             <input type="submit" className={`${styles.button} mt-5`} value={"Enviar Mensaje"} />
 
            
-            <div className=' mensaje-exito text-center  mt-5'><p className={`${styles.p} parrafo`}>
-                {postSend ? `Mensaje Enviado Correctamente 👏` : <div class="lds-dual-ring"></div>}
-                
-                </p></div>
+            <div  className='mensaje-exito text-center  mt-5'>
+
+                <div className={`${styles.p} parrafo`}>
+                    {postSend ?
+                        `Mensaje Enviado Correctamente 👏` 
+                        : <div className="lds-dual-ring"></div>}
+                </div>
+
+            </div>
 
         </form>
 

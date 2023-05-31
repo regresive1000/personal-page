@@ -18,9 +18,9 @@ const Tecnologias = () => {
                     <div className={`${styles.cardTec} col`}>CSS</div>
                     <div className={`${styles.cardTec} col`}>JAVASCRIPT</div>
                     <div className={`${styles.cardTec} col-7`}>Bootstrap - TailwindCSS</div>
-                    <div className={`${styles.cardTec} col-4`}> JQuery</div>
-                    <div className={`${styles.cardTec} col-6`}>React</div>
-                    <div className={`${styles.cardTec} col-5`}>NextJS</div>
+                    <div className={`${styles.cardTec} col`}> JQuery</div>
+                    <div className={`${styles.cardTec} col`}>React</div>
+                    <div className={`${styles.cardTec} col`}>NextJS</div>
 
 
                 </article>                
