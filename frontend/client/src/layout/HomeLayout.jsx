@@ -13,50 +13,50 @@ import estrella1 from '../assets/imgs/stars1.png'
 const HomeLayout = () => {
 
 
-  // useEffect(() => {
+  useEffect(() => {
 
 
-  // // gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-  // gsap.registerPlugin(ScrollTrigger)
-  // const estrella1 = document.querySelector('#estrella1');
-  // const wrapper = document.querySelector('#wrapper');
+  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+  gsap.registerPlugin(ScrollTrigger)
+  const estrella1 = document.querySelector('#estrella1');
+  const wrapper = document.querySelector('#wrapper');
 
 
-  // if (ScrollTrigger.isTouch !== 1) { 
+  if (ScrollTrigger.isTouch !== 1) { 
 
-  //     // ScrollSmoother.create({
-  //     //   wrapper: '#wrapper',
-  //     //   content: '#estrella1',
-  //     //   smooth: 1.8,
-  //     //   effects: true
-  //     // })
+      // ScrollSmoother.create({
+      //   wrapper: '#wrapper',
+      //   content: '#estrella1',
+      //   smooth: 1.8,
+      //   effects: true
+      // })
 
     
-  //     gsap.fromTo(estrella1, { backgroundPosition: "0% 100%"}, {
-  //       backgroundPosition: "0% -200%",
-  //       scrollTrigger: {
-  //           trigger: estrella1,
-  //           start: 'top top',
-  //           end: '100%',
-  //           scrub: true,
+      gsap.fromTo(estrella1, { backgroundPosition: "0% 100%"}, {
+        backgroundPosition: "0% -200%",
+        scrollTrigger: {
+            trigger: estrella1,
+            start: 'top top',
+            end: '100%',
+            scrub: true,
             
-  //       }
-  //     })
+        }
+      })
       
-  //     gsap.fromTo(wrapper, { backgroundPosition: "0% 0%"}, {
-  //       backgroundPosition: "0% -150%",
-  //       scrollTrigger: {
-  //           trigger: estrella1,
-  //           start: 'top top',
-  //           end: '100%',
-  //           scrub: true,
+      gsap.fromTo(wrapper, { backgroundPosition: "0% 0%"}, {
+        backgroundPosition: "0% -150%",
+        scrollTrigger: {
+            trigger: estrella1,
+            start: 'top top',
+            end: '100%',
+            scrub: true,
             
-  //       }
-  //     })
+        }
+      })
 
-  // }
+  }
 
-  // }, [])
+  }, [])
 
 
 
