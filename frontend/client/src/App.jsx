@@ -7,6 +7,7 @@ import {Helmet} from "react-helmet";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomeLayout from './layout/HomeLayout'
 import Landing from './pages/Landing'
+import DragAndDrop from './pages/DragAndDrop'
 
 function App() {
 
@@ -20,9 +21,12 @@ function App() {
       <BrowserRouter>
 
         <Routes>
+  
           <Route path="/" element={ <HomeLayout /> }>
             <Route index element={ <Landing /> } />
+            <Route path='/dyd' element={ <DragAndDrop /> } />
           </Route>
+  
         </Routes>
 
       </BrowserRouter>
