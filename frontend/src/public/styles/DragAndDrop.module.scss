@@ -1,0 +1,19 @@
+.cards {
+    width: 400px;
+    min-height: 700px;
+    margin: 1.5rem;
+    margin-top: 8rem;
+    background-color: rgba(165, 125, 125, 0.451);
+}
+.tasksContainer {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.taskItem {
+    margin: 0;
+    color: white;
+    list-style: none;
+    height: 100%;
+    padding: 2rem;
+}
