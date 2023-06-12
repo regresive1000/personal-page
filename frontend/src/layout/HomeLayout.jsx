@@ -22,7 +22,7 @@ const HomeLayout = () => {
   const wrapper = document.querySelector('#wrapper');
 
 
-  if (ScrollTrigger.isTouch !== 1) { 
+  
 
       // ScrollSmoother.create({
       //   wrapper: '#wrapper',
@@ -54,7 +54,7 @@ const HomeLayout = () => {
         }
       })
 
-  }
+  
 
   }, [])
 
