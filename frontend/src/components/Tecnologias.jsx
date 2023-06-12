@@ -49,9 +49,9 @@ const Tecnologias = () => {
                 <div className={`${styles.cardTec} col-12`}>React - NextJS | Server Side Rendering</div>
                 <div className={`${styles.cardTec} col-12 row justify-content-center p-0 pt-4 pb-2`}>
                     <p>VPS Server</p>
-                    <div className={`${styles.cardTec} ${styles.vpsCard} col-3`}>Ubuntu</div>
-                    <div className={`${styles.cardTec} ${styles.vpsCard} col-3`}>Nginx</div>
-                    <div className={`${styles.cardTec} ${styles.vpsCard} col-3`}>PM2</div>
+                    <div className={`${styles.cardTec} ${styles.vpsCard} col-4 col-lg-3`}>Ubuntu</div>
+                    <div className={`${styles.cardTec} ${styles.vpsCard} col-4 col-lg-3`}>Nginx</div>
+                    <div className={`${styles.cardTec} ${styles.vpsCard} col-4 col-lg-3`}>PM2</div>
                 </div>
                 
 
