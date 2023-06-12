@@ -22,7 +22,7 @@ const Landing = () => {
 
   useEffect(() => {
 
-    if (ScrollTrigger.isTouch !== 1) {
+    
 
     
 
@@ -116,7 +116,7 @@ const Landing = () => {
       
   
   
-    } 
+     
     
 
 
