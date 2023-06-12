@@ -35,6 +35,7 @@ const Landing = () => {
       let num = 50;
       items.forEach(item => {
         const flecha = item.querySelector('.flecha');
+        const contacto = document.querySelector('.contacto')
 
         counter++
         if(counter % 2 === 0) {
@@ -42,12 +43,29 @@ const Landing = () => {
         } else {
           num = 100
         }
+
+        console.log(item.classList)
+        if(item === contacto) {
+
+          gsap.fromTo(item, { opacity: 0, x: num }, {
+            opacity: 1, x: 0,
+            scrollTrigger: {
+              trigger: item,
+              start: '-1300',
+              end: '-800',
+              scrub: true
+            }
+          })
+
+          return
+        }
+
+
         gsap.fromTo(item, { opacity: 0, x: num }, {
           opacity: 1, x: 0,
           scrollTrigger: {
             trigger: item,
             start: '-600',
-            
             end: '-200',
             scrub: true
           }

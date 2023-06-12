@@ -61,7 +61,7 @@ const Contacto = () => {
   return (
 
 
-    <section className={`${styles.section} row section section-display d-flex`}>
+    <section className={`${styles.section} row section contacto section-display d-flex`}>
         
 
         <form id='contacto' action='/' className={`${styles.form} col-21 col-sm-10 col-lg-8 col-xxl-6 d-flex align-items-evenly flex-column`} onSubmit={ (e) => handleSubmit(e) }>
