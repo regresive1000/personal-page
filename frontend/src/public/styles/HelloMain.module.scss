@@ -45,3 +45,26 @@
     font-size: 1.5rem;
     color: mixin.$secondary-font-color;
 }
+
+
+@media (max-width: 768px) {
+
+  
+  .section {
+    min-height: 120vh;
+    
+  }
+  
+
+}
+
+@media (max-width: 576px) {
+
+  
+  .section {
+    min-height: 140vh;
+    
+  }
+  
+
+}

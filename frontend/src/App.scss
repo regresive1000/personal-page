@@ -165,3 +165,20 @@ div#nombre-inicio-sesion {
       transform: rotate(360deg);
     }
   }
+
+
+  /************************************************************/
+
+
+  /* Media Queries */
+
+@media (max-width: 768px) {
+
+  
+  section.section {
+    
+    color: blue;
+  }
+  
+
+}

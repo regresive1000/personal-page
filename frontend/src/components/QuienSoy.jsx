@@ -8,7 +8,7 @@ const QuienSoy = () => {
             <div className={`${styles.flecha} flecha col-1`}>
             </div>
 
-            <div className={`${styles.contenedor} col-11 col-lg-10 row contenedor d-flex flex-column`}>
+            <div className={`${styles.contenedor} col col-lg-10 row contenedor no-gutters d-flex flex-column`}>
                 <div className={`${styles.divP}`}>
                     <p className={styles.p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem perspiciatis quam expedita incidunt tempora neque dicta nihil possimus! Unde autem iure magnam laboriosam voluptatibus ipsam dignissimos sit dolorum quo natus.</p>
                 </div>

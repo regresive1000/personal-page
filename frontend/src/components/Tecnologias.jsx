@@ -9,10 +9,10 @@ const Tecnologias = () => {
             <div className={`${styles.flecha} flecha col-1`}>
             </div>
 
-            <div className={`${styles.frontend} col-10 row contenedor d-flex justify-content-evenly`}>
+            <div className={`${styles.frontend} col col-lg-10 row contenedor d-flex justify-content-evenly`}>
                 <h4 className='col-1'>Frontend</h4>
 
-                <article className={`${styles.cardsTecno} col-7 row`}>
+                <article className={`${styles.cardsTecno} col-xl-10 col-xxl-7 row`}>
 
                     <div className={`${styles.cardTec} col`}>HTML</div>
                     <div className={`${styles.cardTec} col`}>CSS</div>
@@ -41,7 +41,7 @@ const Tecnologias = () => {
         <div className={`${styles.frontend} col-10 row contenedor d-flex justify-content-evenly`}>
             <h4 className='col-1'>Backend</h4>
 
-            <article className={`${styles.cardsTecno} col-7 row d-flex justify-content-center`}>
+            <article className={`${styles.cardsTecno} col-xl-10 col-xxl-7 row d-flex justify-content-center`}>
 
                 <div className={`${styles.cardTec} ${styles.backend} col `}>NodeJS</div>
                 <div className={`${styles.cardTec} ${styles.backend} col `}>Express</div>
