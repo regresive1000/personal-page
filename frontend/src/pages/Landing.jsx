@@ -128,7 +128,7 @@ const Landing = () => {
   return (
     <>
       
-      <main>
+      <main className='container-fluid'>
         
         <HelloMain />
         <QuienSoy />

@@ -1,14 +1,19 @@
 .cards {
-    width: 400px;
-    min-height: 700px;
+    width: 100%;
     margin: 1.5rem;
     margin-top: 8rem;
     background-color: rgba(165, 125, 125, 0.451);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .tasksContainer {
+    width: 400px;
+    min-height: 500px;
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: rgba(146, 130, 130, 0.451);
 }
 .taskItem {
     margin: 0;

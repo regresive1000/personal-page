@@ -24,9 +24,13 @@ function App() {
   
           <Route path="/" element={ <HomeLayout /> }>
             <Route index element={ <Landing /> } />
-            <Route path='/dyd' element={ <DragAndDrop /> } />
+            
           </Route>
   
+          <Route path='/dyd'>
+            <Route index element={ <DragAndDrop /> } />
+          </Route>
+
         </Routes>
 
       </BrowserRouter>
