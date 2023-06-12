@@ -64,7 +64,7 @@ const Contacto = () => {
     <section className={`${styles.section} row section section-display d-flex`}>
         
 
-        <form id='contacto' action='/' className={`${styles.form} col-6 d-flex align-items-evenly flex-column`} onSubmit={ (e) => handleSubmit(e) }>
+        <form id='contacto' action='/' className={`${styles.form} col-21 col-sm-10 col-lg-8 col-xxl-6 d-flex align-items-evenly flex-column`} onSubmit={ (e) => handleSubmit(e) }>
             <div className={`${styles.input} mb-5`}>
                 <label htmlFor="email" className="form-label">Dirección de Email</label>
                 <input type="email" className="form-control" id="email" placeholder="email@ejemplo.com" onChange={ (e) => {setEmail(e.target.value)} } />
