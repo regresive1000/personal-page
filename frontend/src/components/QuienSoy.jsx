@@ -10,7 +10,7 @@ const QuienSoy = () => {
 
             <div className={`${styles.contenedor} col col-lg-10 row contenedor no-gutters d-flex flex-column`}>
                 <div className={`${styles.divP}`}>
-                    <p className={styles.p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem perspiciatis quam expedita incidunt tempora neque dicta nihil possimus! Unde autem iure magnam laboriosam voluptatibus ipsam dignissimos sit dolorum quo natus.</p>
+                    <p className={styles.p}>Soy un desarrollador web con pasión tanto en el front-end como en el back-end, mi objetivo es tratar de aprender cada día un poco para poder ser un buen profesional, desde ya muchas gracias por leerme y espero que me tengan en cuenta</p>
                 </div>
 
                 <div className={styles.divImg}>
