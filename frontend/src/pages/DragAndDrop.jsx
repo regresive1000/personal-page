@@ -6,9 +6,13 @@ import { DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 
 const DragAndDrop = () => {
 
+  const initialTasks = { name: "initialTasks", title: "To do:", id: "10", list:[] }
+
+  const [tasks, setTasks] = useState([ initialTasks ]);
+  const [task, setTask] = useState('')
 
 
- const moveElmColumn = (lists, source, destination) => {
+  const moveElmColumn = (lists, source, destination) => {
   let removedElm;
   const startIndexSource = source.index;
   const endIndexDestination = destination.index;
@@ -41,15 +45,18 @@ const DragAndDrop = () => {
     return elm;
   })
   return resultadoListados;
- }
+  }
 
-  
-  const initialTasks = { name: "initialTasks", title: "To do:", list:[] }
-  const inprocess = { name: "inprocess", title: "In Process:", list:[] }
-  const done = { name: "done", title: "Done:", list:[] }
-  const [tasks, setTasks] = useState([ initialTasks, inprocess, done ]);
-  const [task, setTask] = useState('')
+  const moveColumn = (prevTasks ,source, destination) => {
+    const list = [...prevTasks];
+    const [movedColumn] = list.splice(source.index, 1);
+    list.splice(destination.index, 0, movedColumn);
 
+    return list;
+  }
+
+
+  //Traer Tasks de LocalStorage al iniciar APP
   useEffect( () => {
     try {
       const resultado = JSON.parse(localStorage.getItem( 'tasks' ));
@@ -69,6 +76,7 @@ const DragAndDrop = () => {
     
   }, [])
 
+  //Actulizar Tasks en LocalStorage
   useEffect( () => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks])
@@ -89,8 +97,7 @@ const DragAndDrop = () => {
     setTask("");
   }
 
-  function handleDeleteElement(e, id) {
-    
+  function handleDeleteElement(e, id) {   
     setTasks( prevTasks => { // Prevtasks trae los elementos del estado
       const resultado = prevTasks.filter( elm => {
 
@@ -109,6 +116,37 @@ const DragAndDrop = () => {
     })
   }
 
+  function handleDeleteColumn(id) {
+    setTasks( prevTasks => {
+      const resultado = prevTasks.filter( elm => {
+        if(elm.id === id) {
+          return;
+        }
+        return elm;
+      })
+
+      return resultado;
+    })
+  }
+
+  function handleAddColumn () {
+    
+      setTasks( prevTasks => {
+        const newTasks = [...prevTasks];
+        const id = Date.now().toString();
+        const newColumn = { name: id + 1, id: id + 1, title: prompt('Ingresa El Titulo de la Nueva Columna'), list: []};
+        if(!newColumn.title) {
+          if(newColumn.title === null) { return prevTasks }
+          alert('Debe Colocar un Título para Crear una Nueva Columna')
+          return prevTasks
+        }
+        newTasks.push(newColumn);
+        return newTasks;
+      })
+    
+    
+  }
+
   return (
     
     
@@ -120,9 +158,25 @@ const DragAndDrop = () => {
       if(source.index === destination.index && source.droppableId === destination.droppableId) {
         return;
       }
+
+      if(source.droppableId === "columnasDroppables" && destination.droppableId !== "columnasDroppables") {
+        return;
+      }
+      if(source.droppableId !== "columnasDroppables" && destination.droppableId === "columnasDroppables") {
+        return;
+      }
+
+      if(source.droppableId === "columnasDroppables" && destination.droppableId === "columnasDroppables") {
+        console.log(tasks)
+        setTasks( prevTasks => moveColumn(prevTasks, source, destination));
+        console.log(tasks)
+      console.log(result)
+        return;
+      }
       
-      setTasks(prevTasks => moveElmColumn(prevTasks, source, destination))
+      setTasks(prevTasks => moveElmColumn(prevTasks, source, destination));
       console.log(tasks)
+      console.log(result)
     }}>
     
     
@@ -136,53 +190,68 @@ const DragAndDrop = () => {
           <input className={styles.inputButton} type='submit' value="Añadir Tarea" />
         </form>
 
-        <div className={styles.cards}>
+        <Droppable droppableId='columnasDroppables' direction='horizontal'>
+          { (droppablColProvided) => (
 
-          { 
-            tasks.map(( taskCol, indexCol ) => (
+            <div className={styles.cards}  {...droppablColProvided.droppableProps} ref={droppablColProvided.innerRef}>
 
-              <div className={styles.cardTasks} key={indexCol}>
-                <h3>{taskCol.title}</h3>
+              { 
+                tasks.map(( taskCol, indexCol ) => (
+                  
+                  <Draggable key={taskCol.id} draggableId={taskCol.id} index={indexCol} type="column">
+                    { (draggableColProvider) => (
 
-                <Droppable droppableId={taskCol.name}>
-                  { (droppableProvided) => 
-                    ( /* droppableprops le pasa todas las funciones del droppable - el ref es la conexión del componente a mi ul para convertirlo en Droppable - el placeholder guarda el espacio en el ul */
-                      <ul {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className={styles.tasksContainer}>
-                        {
-                          tasks[indexCol].list.length ?                  
-                            tasks[indexCol].list.map( (task, index) => ( 
-                              <Draggable key={task.id} draggableId={task.id} index={index}>
-                                { (draggableProvided) => (
-                                    <li
-                                      {...draggableProvided.draggableProps}
-                                      ref={draggableProvided.innerRef}
-                                      {...draggableProvided.dragHandleProps} /* permite agarrar al elemento que quiero que sea solo agarrable */
-                                      className={styles.taskItem}
-                                      >
-                                      {task.text}
-                                      <button className={styles.buttonDeleteElement} onClick={e => handleDeleteElement(e, task.id)}>&#128473;</button>
-                                    </li>
-                                  )
+                      <div className={styles.cardTasks} {...draggableColProvider.draggableProps} ref={draggableColProvider.innerRef}  >
+                        <h3 {...draggableColProvider.dragHandleProps} ><div></div>{taskCol.title}<button onClick={e => {handleDeleteColumn(taskCol.id)}}>&#128473;</button></h3>
+                        
+                        <Droppable droppableId={taskCol.name} type='task'>
+                          { (droppableProvided) => 
+                            ( /* droppableprops le pasa todas las funciones del droppable - el ref es la conexión del componente a mi ul para convertirlo en Droppable - el placeholder guarda el espacio en el ul */
+                              <ul {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className={styles.tasksContainer}>
+                                {
+                                  tasks[indexCol].list.length ?                  
+                                    tasks[indexCol].list.map( (task, index) => ( 
+                                      <Draggable key={task.id} draggableId={task.id} index={index}>
+                                        { (draggableProvided) => (
+                                            <li
+                                              {...draggableProvided.draggableProps}
+                                              ref={draggableProvided.innerRef}
+                                              {...draggableProvided.dragHandleProps} /* permite agarrar al elemento que quiero que sea solo agarrable */
+                                              className={styles.taskItem}
+                                              >
+                                              {task.text}
+                                              <button className={styles.buttonDeleteElement} onClick={e => handleDeleteElement(e, task.id)}>&#128473;</button>
+                                            </li>
+                                          )
+                                        }
+                                      </Draggable>
+                                    ))
+                                    :
+                                    ""
                                 }
-                              </Draggable>
-                            ))
-                            :
-                            ""
-                        }
-                        {droppableProvided.placeholder}
-                      </ul>
-                    )
-                  }
-                </Droppable>
+                                {droppableProvided.placeholder}
+                              </ul>
+                            )
+                          }
+                        </Droppable>
 
-              </div>
+                      </div>
 
-          ))
-          }
+                    ) }
 
-        </div>
 
-        
+                  </Draggable>
+
+              ))
+              }
+              {droppablColProvided.placeholder}
+
+              <div className={`${styles.agregarColumna}`}><h4>Añadir Columna</h4><button onClick={handleAddColumn}>&#43;</button></div>
+            </div>
+            
+              
+          )}
+        </Droppable>
         
 
        

@@ -1,19 +1,24 @@
 
 
 .main {
+    overflow: auto;
+    padding-top: 4rem;
     width: 100%;
     height: 100%;
-    position: fixed;
-    background-color: rgb(96, 106, 166);
+    position: fixed;    
+    background: rgb(101,95,196);
+    background: radial-gradient(circle, rgba(101,95,196,1) 0%, rgb(6, 134, 232) 100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
 }
 .cards {
     display: flex;
-    width: 90%;
+    padding: 1rem;
+    width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
 }
 @media (max-width: 768px) {
     .cards {
@@ -24,14 +29,30 @@
     }
 }
 .cardTasks {
-    background-color: rgb(125, 20, 222);
+    
     border-radius: 7px;
-    width: 32%;
+    width: 22%;
+    
     & h3 {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        margin: 1rem 0;
+        padding: 1rem 1rem;
+        margin: 0;
+        background: linear-gradient(90deg, rgba(125,20,222,1) 0%, rgb(116, 71, 240) 100%);
+        &:hover {
+            transition: 0.2s;
+            background-color: rgb(144, 27, 254);  
+        }
+        & button {
+            background-color: transparent   ;
+            border: none;
+            color: rgb(223, 178, 178);
+            &:hover {
+                transition: 0.2s;
+                color: white;
+            }
+        }
     }
 }
 .tasksContainer {
@@ -109,3 +130,25 @@
         background-color: rgb(125, 138, 209);
     }
 }
+
+.agregarColumna {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & button {
+        padding: 7rem 3rem;
+        font-size: 6rem;
+        background-color: transparent;
+        border: 3px solid rgb(125, 20, 222);
+        color: rgb(125, 20, 222);
+
+        &:hover {
+            transition: 0.2s;
+            color: rgb(144, 27, 254);
+            border-color: rgb(144, 27, 254);
+        }
+    }
+}
+
