@@ -10,7 +10,7 @@ import vpsImg from '../assets/imgs/vps-sv.png'
 import calcImg from '../assets/imgs/calculadora.png'
 import climaImg from '../assets/imgs/weather.png'
 import showImg from '../assets/imgs/show-searcher.png'
-
+import todoDndImg from '../assets/imgs/todoDnd.png'
 
 
 
@@ -39,20 +39,24 @@ const Proyectos = () => {
             <article id='proyectos' className={`${styles.cardsProyectos} col-12 row d-flex justify-content-center`} onClick={ (e) => {handleClickScroll(e)} }>
 
                 <div className={`${styles.primerosProyectos} col-3`} >
+                    <img src={todoDndImg} alt="" data-bs-toggle="modal" data-bs-target="#todoDnd" className='miniatura-modal'/>
+                    <ModalProyect link="dyd" booleanLink={true} bsTarget={"todoDnd"} imagen={todoDndImg} title={"Drag and Drop, To Do List"} descripcion={`Aplicación donde es una "to do list" integrada con la funcionalidad Drag And Drop, esta realizada con la librería de DnD`} />
+                </div>
+                <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={jockeyImg} alt="" data-bs-toggle="modal" data-bs-target="#jockeyModal" className='miniatura-modal'/>
-                    <ModalProyect bsTarget={"jockeyModal"} imagen={jockeyImg}  title={"Base de datos MongoDB"} descripcion={"Mi primer trabajo formal donde realice la Landing page al Jockey Club Posadas y que aun sigue en desarrollo porque estoy a la espera de unas imagenes que me tienen que enviar aun, pero la página ya esta en la web con los assets por default a la espera"} />
+                    <ModalProyect link="www.jockeyclubposadas.com" booleanLink={false} bsTarget={"jockeyModal"} imagen={jockeyImg}  title={"Jockey Club Posadas"} descripcion={"Mi primer trabajo formal donde realice la Landing page al Jockey Club Posadas y que aun sigue en desarrollo porque estoy a la espera de unas imagenes que me tienen que enviar aun, pero la página ya esta en la web con los assets por default a la espera"} />
                 </div>
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={apvImg} alt="" data-bs-toggle="modal" data-bs-target="#apvModal" className='miniatura-modal'/>
-                    <ModalProyect bsTarget={"apvModal"} imagen={apvImg}  title={"Base de datos MongoDB"} descripcion={"Una aplicación que tiene registro de usuarios, autenticación, encriptación de contraseñas, y manejo de datos C.R.U.D. Se administra pacientes que son guardados en una base de datos y estos datos pueden crearse, leerse, actualizarse y eliminarse"} />
+                    <ModalProyect bsTarget={"apvModal"} imagen={apvImg}  booleanLink={false} title={"Administrador de Pacientes"} descripcion={"Una aplicación que tiene registro de usuarios, autenticación, encriptación de contraseñas, y manejo de datos C.R.U.D. Se administra pacientes que son guardados en una base de datos y estos datos pueden crearse, leerse, actualizarse y eliminarse"} />
                 </div>
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={baseDatosImg} alt="" data-bs-toggle="modal" data-bs-target="#baseDatosModal"/>
-                    <ModalProyect bsTarget={"baseDatosModal"} imagen={baseDatosImg} title={"Base de datos MongoDB"} descripcion={"Esa es mi base de datos, en la que administro distintas aplicaciónes y manejo todo tipo de peticiones (CRUD)"} />
+                    <ModalProyect bsTarget={"baseDatosModal"} imagen={baseDatosImg} booleanLink={false} title={"Base de datos MongoDB"} descripcion={"Esa es mi base de datos, en la que administro distintas aplicaciónes y manejo todo tipo de peticiones (CRUD)"} />
                 </div>  
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={vpsImg} alt="" data-bs-toggle="modal" data-bs-target="#vpsModal" className='miniatura-modal'/>
-                    <ModalProyect bsTarget={"vpsModal"} imagen={vpsImg} title={"Servidor VPS"} descripcion={"Configuración y Deploy de servidor VPS, donde he utilizado herramientas como PM2 y Nginx. Este servidor tiene una IP publica donde se levanta el servidor de cada aplicación web, y las peticiones que llegan son redireccionadas a cada aplicación a travez de Reverse Proxy"} />
+                    <ModalProyect bsTarget={"vpsModal"} imagen={vpsImg} title={"Servidor VPS"} booleanLink={false} descripcion={"Configuración y Deploy de servidor VPS, donde he utilizado herramientas como PM2 y Nginx. Este servidor tiene una IP publica donde se levanta el servidor de cada aplicación web, y las peticiones que llegan son redireccionadas a cada aplicación a travez de Reverse Proxy"} />
                 </div>  
                 
                 

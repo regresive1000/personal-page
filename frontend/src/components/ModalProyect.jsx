@@ -1,7 +1,7 @@
 import styles from "../public/styles/ModalProyect.module.scss";
+import { Link } from 'react-router-dom';
 
-
-const ModalProyect = ({bsTarget, imagen, title, descripcion}) => {
+const ModalProyect = ({bsTarget, imagen, title, descripcion, booleanLink, link}) => {
   return (
     <div className={`${styles.modal} modal fade`} id={bsTarget} tabIndex="-1" aria-labelledby={`${bsTarget}Label`} aria-hidden="true">
     
@@ -23,6 +23,13 @@ const ModalProyect = ({bsTarget, imagen, title, descripcion}) => {
                     <h4 className={` ${styles.h4} modal-title fs-3 m-0 mt-2 mb-3 justify-self-start`} id={`${bsTarget}Label`}>{title}</h4>
                     <p className={styles.p}>{descripcion}</p>
                     <div className={styles.botones}>
+                        {booleanLink?
+                            (<Link className={`${styles.cerrar}`} to={link} reloadDocument>Ver Página</Link>)
+                            :
+                            ""
+                        }
+                        
+                        <div></div>
                         <button type="button" className={`${styles.cerrar}`} data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
