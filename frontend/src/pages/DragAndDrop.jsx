@@ -182,9 +182,9 @@ const DragAndDrop = () => {
     
     
 
-      <div className={styles.main}>
+      <div className={`${styles.main} container-fluid`}>
 
-        <form className={styles.formAddElm} onSubmit={ e => {handleTaskSubmit(e)} }>
+        <form className={`${styles.formAddElm}`} onSubmit={ e => {handleTaskSubmit(e)} }>
           <h2>Añade Elementos a la Lista:</h2>
           <input className={styles.inputText} type="text" value={task} onChange={e => {setTask(e.target.value)}} />
           <input className={styles.inputButton} type='submit' value="Añadir Tarea" />
@@ -193,7 +193,7 @@ const DragAndDrop = () => {
         <Droppable droppableId='columnasDroppables' direction='horizontal'>
           { (droppablColProvided) => (
 
-            <div className={styles.cards}  {...droppablColProvided.droppableProps} ref={droppablColProvided.innerRef}>
+            <div className={`${styles.cards} row`}  {...droppablColProvided.droppableProps} ref={droppablColProvided.innerRef}>
 
               { 
                 tasks.map(( taskCol, indexCol ) => (
@@ -201,7 +201,7 @@ const DragAndDrop = () => {
                   <Draggable key={taskCol.id} draggableId={taskCol.id} index={indexCol} type="column">
                     { (draggableColProvider) => (
 
-                      <div className={styles.cardTasks} {...draggableColProvider.draggableProps} ref={draggableColProvider.innerRef}  >
+                      <div className={`${styles.cardTasks} col`} {...draggableColProvider.draggableProps} ref={draggableColProvider.innerRef}  >
                         <h3 {...draggableColProvider.dragHandleProps} ><div></div>{taskCol.title}<button onClick={e => {handleDeleteColumn(taskCol.id)}}>&#128473;</button></h3>
                         
                         <Droppable droppableId={taskCol.name} type='task'>
@@ -246,7 +246,7 @@ const DragAndDrop = () => {
               }
               {droppablColProvided.placeholder}
 
-              <div className={`${styles.agregarColumna}`}><h4>Añadir Columna</h4><button onClick={handleAddColumn}>&#43;</button></div>
+              <div className={`${styles.agregarColumna} col-2`}><h4>Añadir Columna</h4><button onClick={handleAddColumn}>&#43;</button></div>
             </div>
             
               

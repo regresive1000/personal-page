@@ -19,6 +19,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+    transition: 0.2s;
 }
 @media (max-width: 768px) {
     .cards {
@@ -31,7 +32,7 @@
 .cardTasks {
     
     border-radius: 7px;
-    width: 22%;
+    
     
     & h3 {
         display: flex;
