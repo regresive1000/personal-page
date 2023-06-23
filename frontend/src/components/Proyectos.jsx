@@ -40,7 +40,7 @@ const Proyectos = () => {
 
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={todoDndImg} alt="" data-bs-toggle="modal" data-bs-target="#todoDnd" className='miniatura-modal'/>
-                    <ModalProyect link="dnd" booleanLink={true} bsTarget={"todoDnd"} imagen={todoDndImg} title={"Drag and Drop, To Do List"} descripcion={`Aplicación donde es una "to do list" integrada con la funcionalidad Drag And Drop, esta realizada con la librería de DnD`} />
+                    <ModalProyect link="dnd" booleanLink={true} bsTarget={"todoDnd"} imagen={todoDndImg} title={"Drag and Drop, To Do List"} descripcion={`Aplicación donde es una "to do list" integrada con la funcionalidad Drag And Drop, donde tiene funcionalidades desde se puede manjear los datos de la aplicación a su gusto (tanto elementos, como columnas) y estas van a ser guardadas dentro del LocalStorage del navegador. Es escalable todo lo que se quiera ya que esta hecha con una logica que permite que no haya conflicto entre columnas y demas elementos.`} />
                 </div>
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={jockeyImg} alt="" data-bs-toggle="modal" data-bs-target="#jockeyModal" className='miniatura-modal'/>
