@@ -7,8 +7,9 @@ import { DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 const DragAndDrop = () => {
 
   const initialTasks = { name: "initialTasks", title: "To do:", id: "10", list:[] }
+  const inProcess = { name: "inprocess", title: "In Process", id: "1241", list: [] }
 
-  const [tasks, setTasks] = useState([ initialTasks ]);
+  const [tasks, setTasks] = useState([ initialTasks, inProcess ]);
   const [task, setTask] = useState('')
 
 
@@ -71,8 +72,6 @@ const DragAndDrop = () => {
       console.log(error)
       return;
     }
-    
-    
     
   }, [])
 
