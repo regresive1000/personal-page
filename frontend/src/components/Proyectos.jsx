@@ -40,7 +40,7 @@ const Proyectos = () => {
 
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={todoDndImg} alt="" data-bs-toggle="modal" data-bs-target="#todoDnd" className='miniatura-modal'/>
-                    <ModalProyect link="dyd" booleanLink={true} bsTarget={"todoDnd"} imagen={todoDndImg} title={"Drag and Drop, To Do List"} descripcion={`Aplicación donde es una "to do list" integrada con la funcionalidad Drag And Drop, esta realizada con la librería de DnD`} />
+                    <ModalProyect link="dnd" booleanLink={true} bsTarget={"todoDnd"} imagen={todoDndImg} title={"Drag and Drop, To Do List"} descripcion={`Aplicación donde es una "to do list" integrada con la funcionalidad Drag And Drop, esta realizada con la librería de DnD`} />
                 </div>
                 <div className={`${styles.primerosProyectos} col-3`} >
                     <img src={jockeyImg} alt="" data-bs-toggle="modal" data-bs-target="#jockeyModal" className='miniatura-modal'/>

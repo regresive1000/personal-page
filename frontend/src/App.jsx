@@ -27,7 +27,7 @@ function App() {
             
           </Route>
   
-          <Route path='/dyd'>
+          <Route path='/dnd'>
             <Route index element={ <DragAndDrop /> } />
           </Route>
 

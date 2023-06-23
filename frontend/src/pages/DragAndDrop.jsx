@@ -246,7 +246,7 @@ const DragAndDrop = () => {
               }
               {droppablColProvided.placeholder}
 
-              <div className={`${styles.agregarColumna} col-2`}><h4>Añadir Columna</h4><button onClick={handleAddColumn}>&#43;</button></div>
+              <div className={`${styles.agregarColumna} col-2`}><button onClick={handleAddColumn}>&#43;</button></div>
             </div>
             
               
