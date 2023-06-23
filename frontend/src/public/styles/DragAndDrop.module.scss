@@ -22,16 +22,10 @@
     transition: 0.2s;
 
 }
-@media (max-width: 768px) {
-    .cards {
-        width: 100%;
-    }
-    .cardTasks {
-        width: 33%;
-    }
-}
+
 .cardTasks {
     
+    max-width: 500px;
     border-radius: 7px;
     margin: 1.5rem;
     
@@ -66,7 +60,7 @@
 }
 .tasksContainer {
     width: 100%;
-    min-height: 500px;
+    height: 500px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -86,8 +80,8 @@
     height: 4.5rem;
     padding-left: 2rem;
     font-size: 1.3rem;
-    
-
+    margin-bottom: 1px;
+    margin-top: 1px;
     &:hover {
         transition: 0.2s;
         background-color: rgb(93, 115, 236);
